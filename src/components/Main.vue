@@ -1,15 +1,15 @@
 <script>
-import character from './partial/Character.vue'
+import Character from './partial/Character.vue'
 import { store } from '../data/store' 
   export default {
-    components:{
-      character
-    },
     data(){
       return{
         store
       }
-    }
+    },
+    components:{
+      Character
+    }    
   }
 </script>
 
@@ -34,6 +34,6 @@ import { store } from '../data/store'
   main{
     background-color: #ddd6f8;
     background-image: linear-gradient(to bottom, #ddd6f8, #a599d6);
-    height: 100vh;
+    height: 100%;
   }
 </style>
