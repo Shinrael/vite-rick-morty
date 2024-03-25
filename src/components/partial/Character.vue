@@ -12,10 +12,10 @@
 
 <template>
   <div class="col">
-    <div class="card mb-3">
+    <div class="card mb-3 shadow">
       <img :src="image" class="rounded" alt="name">
       <div class="card-body">
-        <h3>{{ name }}</h3>
+        <h4 class="">{{ name }}</h4>
         <p class="text-warning bg-dark">{{ status }}</p>
         <p class="text-danger-emphasis">{{species}}</p>
       </div>    
@@ -25,5 +25,8 @@
 
 
 <style lang="scss" scoped>
-
+  .card:hover{
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.05);
+  }
 </style>
