@@ -16,10 +16,7 @@ import Main from './components/Main.vue';
     methods:{
       getApi(){
         axios.get(this.store.apiUrl, {
-          params:{
-            nums: 20,
-            offset: 0,
-          }
+          params:store.queryParams
         })
         .then(result => {
           this.store.characterList = result.data.results;
@@ -50,7 +47,7 @@ import Main from './components/Main.vue';
 
 <template>
   <body>
-    <Header />
+    <Header @startSearch="getApi"/>
     <Main />
   </body>
 </template>
