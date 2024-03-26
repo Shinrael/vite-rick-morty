@@ -1,9 +1,11 @@
 <script>
 import axios from 'axios';
 import { store } from './data/store';
+import Header from './components/Header.vue';
 import Main from './components/Main.vue';
   export default {
     components:{
+      Header,
       Main,
     },
     data(){
@@ -37,12 +39,20 @@ import Main from './components/Main.vue';
 
 
 <template>
-  <Main />
+  <body>
+    <Header />
+    <Main />
+  </body>
 </template>
 
 
 
-<style lang="scss" scoped>
+<style lang="scss">
 @use './assets/scss/main.scss';
 
+body{
+    background-color: #ddd6f8;
+    background-image: linear-gradient(to bottom, #ddd6f8, #a599d6);
+    height: 100%;
+  }
 </style>
