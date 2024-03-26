@@ -15,7 +15,6 @@ import Main from './components/Main.vue';
     },
     methods:{
       getApi(){
-        console.log(this.store);
         axios.get(this.store.apiUrl, {
           params:{
             nums: 20,
@@ -29,10 +28,21 @@ import Main from './components/Main.vue';
         .catch(error => {
           console.log(error);
         })
+      },
+      getName(){
+        axios.get(this.store.nameUrl)
+        .then(res => {
+          this.store.characterName = res.data.results.map(character => character.name);
+          console.log(this.store.characterName);          
+        })
+        .catch(error => {
+          console.log(error);
+        })
       }
     },
     mounted(){
-      this.getApi()
+      this.getApi(),
+      this.getName()
     }
   }
 </script>

@@ -15,11 +15,11 @@ import { store } from '../data/store'
     <label for="exampleDataList" class="form-label">Ricerca Personaggi</label>
     <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Scrivi qui per cominciare la ricerca.">
     <datalist id="datalistOptions">
-      <option value="San Francisco"></option>
-      <option value="New York"></option>
-      <option value="Seattle"></option>
-      <option value="Los Angeles"></option>
-      <option value="Chicago"></option>
+      <option
+        v-for="(name,index) in this.store.characterName"
+        :key="index"
+        :value="name"
+        ></option>
 </datalist>
   </div>
 </template>
